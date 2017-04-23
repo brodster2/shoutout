@@ -21,9 +21,13 @@
             </div>
             <div id="input">
                 <form method="post" action="process.php">
-                    <input type="text" name="user" placeholder="Enter your name">
-                    <input type="text" name="message" placeholder="Enter a message">
-                    <input type="submit" name="submit" value="shout it" class="shout-btn">
+                    <div class="input-wrapper" id="text-inputs">
+                        <input type="text" name="user" placeholder="Enter your name">
+                        <input type="text" name="message" placeholder="Enter a message">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="submit" name="submit" value="Shout it" class="shout-btn">
+                    </div>
                 </form>
             </div>
         </div>

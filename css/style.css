@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial;
+    font-size: 22px;
+    line-height: 1.5em;
+    background: #f4f4f4;
+}
+
+#container {
+    background: #333333;
+    margin: 50px auto;
+    overflow: auto;
+    width: 70vw;
+    min-height: 400px;
+}
+
+header h1 {
+    color: white;
+    font-size: 30px;
+    padding: 15px 0 10px 10px;
+    border-bottom: 1px solid white;
+}
+
+#shouts {
+    width: 90%;
+    background: lightgrey;
+    height: 400px;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+.shout {
+    list-style: none;
+    padding: 8px;
+    border-bottom: 1px #cccccc dotted;
+}
+
+.shout span {
+    color: #aaaaaa;
+}
+
+#input {
+    width: 90%;
+    min-height: 80px;
+    margin: 20px auto 0 auto;
+}
+
+.input-wrapper {
+    width: 90%;
+    margin: 15px auto;
+}
+
+#text-inputs input{
+	height: 25px;
+    width: 47%;
+    padding: 3px;
+    margin-bottom: 20px;
+    border: #666666 1px solid;
+}
+
+.shout-btn {
+    font-size: 20px;
+    display: block;
+    margin: 15px auto;
+    width: 30%;
+    min-width: 150px;
+    cursor: pointer;
+    border: none;
+    padding: 20px 10px;
+    background: lightgreen;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px){
+    #input input[type='text'] {
+        width: 100%;
+    }
+    
+    #container {
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    #container h1 {
+	    font-size: 25px;
+        padding: 10px 0 10px 10px;
+    }
+}
