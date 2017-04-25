@@ -1,3 +1,9 @@
+<?php include 'database.php'; ?>
+<?php
+	//Create select query;
+	$query = "SELECT * FROM shouts ORDER BY id DESC";
+	$shouts = mysqli_query($con, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,13 +19,17 @@
             </header>
             <div id="shouts">
                 <ul>
-                    <li class="shout"><span>10:30PM - </span>Magz: Hey what are you guys up to?</li>
-                    <li class="shout"><span>10:30PM - </span>Magz: Hey what are you guys up to?</li>
-                    <li class="shout"><span>10:30PM - </span>Magz: Hey what are you guys up to?</li>
-                    <li class="shout"><span>10:30PM - </span>Magz: Hey what are you guys up to?</li>
+                   <?php while($row = mysqli_fetch_assoc($shouts)) : ?>
+                   
+                    <li class="shout"><span><?php echo $row['time'] ?> - </span><strong><?php echo $row['user'] ?></strong> : <?php echo $row['message'] ?></li>
+                    
+                    <?php endwhile; ?>
                 </ul>
             </div>
             <div id="input">
+               <?php if(isset($_GET['error'])) : ?>
+               	<div class="error"><?php echo $_GET['error']; ?></div>
+				<?php endif; ?>
                 <form method="post" action="process.php">
                     <div class="input-wrapper" id="text-inputs">
                         <input type="text" name="user" placeholder="Enter your name">
